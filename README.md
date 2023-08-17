@@ -1,21 +1,23 @@
-MIT License
+# LetItHappen
 
-Copyright (c) 2023 A01029829
+My first repository to lear Git.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This file is in MarkDown format.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Unix Commands
+- **ls**: list the contents of a directory. 
+- **cd**: change to another directory.
+- **ls --help**: search instructions for a command.
+- **pdw**: print the working directory. show where am I atm.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Git Commands
+- **git clone**: download a repository in the local machine.
+- **git status**: check the current status of the local repository.
+- **git add**: add a change in the working directory.
+- **git commit**: save changes to local repository.
+- **git push**: upload local repository content to a remote repository.
+- **git fetch**: search for changes in repository.
+- **git pull**: apply changes from a remote repository to the local repository.
+- **git checkout**: return to another version of the local repository.
+
+
