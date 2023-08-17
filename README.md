@@ -16,5 +16,5 @@ This file is in MarkDown format
 - **git add**: add a cgnage in the working directory.
 - **git commit**: save changes to local repository.
 - **git push**: upload local repository content to a remote repository.
-- **fetch**: search for changes in the repository.
-- **pull**: apply changes from a remote repository to the local repository. 
+- **git fetch**: search for changes in the repository.
+- **git pull**: apply changes from a remote repository to the local repository. 
