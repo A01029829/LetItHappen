@@ -18,3 +18,5 @@ This file is in MarkDown format
 - **git push**: upload local repository content to a remote repository.
 - **git fetch**: search for changes in the repository.
 - **git pull**: apply changes from a remote repository to the local repository. 
+- **git checkout**: return to another version of the local repository.
+
