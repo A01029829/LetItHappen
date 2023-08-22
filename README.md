@@ -10,6 +10,8 @@ This file is in MarkDown format.
 - **ls --help**: search instructions for a command.
 - **pdw**: print the working directory. show where am I atm.
 
+![Unix Command Guide](fwunixrefshot.png)
+
 ## Git Commands
 - **git clone**: download a repository in the local machine.
  ```bash
