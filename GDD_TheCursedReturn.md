@@ -49,7 +49,8 @@ Queda estrictamente prohibida la reproducción, distribución, modificación o u
 
 ---
 ### **Logo**
-GitHub Image md
+![Alt text](LogoTheCursedReturn.jpg)
+
 
 ### **Summary**
 
