@@ -772,32 +772,23 @@ Dado que el equipo está conformado por tres estudiantes y no tenemos experienci
 
 A continuación se detalla el cronograma del desarrollo, es importante aclarar y hacer mucho énfasis en que este cronograma NO es el oficial y que se puede ir cambiando durante el proceso de desarrollo del proyecto.
 
-1. develop base classes
-    1. base entity
-        1. base player
-        2. base enemy
-        3. base block
-  2. base app state
-        1. game world
-        2. menu world
-2. develop player and basic block classes
-    1. physics / collisions
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
-    2. enemies
-        1. soldier
-        2. rat
-        3. etc.
-5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
-6. design sounds
-7. design music
-
-_(example)_
+1. Desarrollar Clases Base
+    1. Definir entidad base
+        1. Jugador Base
+        2. Enemigo Base
+        3. Bloques para obstáculos
+  2. Estado Base del juego
+        1. Mundo del Juego
+        2. Mundo del Menú
+2. Desarrollar Clases del Jugador y Bloques Básicos
+    1. Físicas / Colisiones
+3. Refinar Controles / Física
+4. Desarrollar Otras Clases Derivadas
+    1. Bloques
+    2. Enmigos
+5. Diseñar Niveles
+    1. Implementar Movimiento
+    2. Introducir Ataques
+    3. Introducir al arquero y al armero
+6. Buscar Efectos de Sonido
+7. Buscar la música
