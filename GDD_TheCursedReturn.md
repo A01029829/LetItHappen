@@ -32,11 +32,6 @@ Queda estrictamente prohibida la reproducción, distribución, modificación o u
     3. [Mechanics](#mechanics)
 4. [Level Design](#level-design)
     1. [Themes](#themes)
-        1. Ambience
-        2. Objects
-            1. Ambient
-            2. Interactive
-        3. Challenges
     2. [Game Flow](#game-flow)
 5. [Development](#development)
     1. [Abstract Classes](#abstract-classes--components)
@@ -638,7 +633,7 @@ Cada bioma tendrá su propio tileset, organizados en 12 salas distribuidas en 3 
    - Árboles
    - Lagunas (zonas con agua)
 
-2. **Desierto*
+2. *Desierto*
    - Arena
    - Ruinas de piedra
    - Restos de estructuras
@@ -657,44 +652,19 @@ Cada bioma tendrá su propio tileset, organizados en 12 salas distribuidas en 3 
 Además de estos elementos en los tilesets, planeamos agregar decoraciones que no tengan ningún otro propósito más que ser utilizados como decoración para ayudar a ambientalizar la zona. No tendrán interacción alguna con el personaje.
 
 **Ambiente**
-- Hierba Alta
-- Huesos en el suelo
-- Picos de hielo
-- Columnas rotas (ruinas)
-- Estatuas dañadas (ruinas)
-- Raíces que salen de los árboles
-- Árboles
-- Arbustos
+   - Hierba Alta
+   - Huesos en el suelo
+   - Picos de hielo
+   - Columnas rotas (ruinas)
+   - Estatuas dañadas (ruinas)
+   - Raíces que salen de los árboles
+   - Árboles
+   - Arbustos
 
 **Other**
-- Cofres
-- Camino que indica la salida al siguiente nivel
-- Zonas donde estarán los NPC´s (Curandero y Armero)
-
-
-1. Blocks
-    1. Dirt
-    2. Dirt/Grass
-    3. Stone Block
-    4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
-2. Ambient
-    1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
-3. Other
-    1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
-
-_(example)_
-
+   - Cofres
+   - Camino que indica la salida al siguiente nivel
+   - Zonas donde estarán los NPC´s (Curandero y Armero)
 
 ## _Sounds/Music_
 
@@ -702,46 +672,104 @@ _(example)_
 
 ### **Style Attributes**
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+La banda sonora de “The Cursed Return” se basará en un estilo orquestal ambiental que evoque una sensación de estar en una aventura legendaria, pero sin encasillarse en una interpretación medieval o similar al género de nuestros personajes e historia. Deseamos utilizar instrumentos orquestales como cuerdas, metales, percusión, y coros para reforzar la sensación de grandeza y peligro, por lo que también es prudente utilizar un tempo que sea rápido, uno ideal sería 165 BPM, que puede dar pauta a coros sombríos o armonías épicas.
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
+El tono general de la música será tenso y opresivo, ya que la mecánica de la maldición genera una presión constante sobre el jugador, esto se puede reflejar con composiciones que tengan:
+- Ritmos y progresiones armónicas que transmiten urgencia y peligro
+- Crescendos dinámicos en combate para aumentar la tensión
+- Uso de cuerdas en secciones más tranquilas para dar un respiro y una sensación de “calma” antes de regresar a los combates.
+- Capas musicales progresivas, que vayan añadiendo más instrumentos conforme el jugador va llegando más lejos.
 
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
+A la hora de decidir una generación de biomas aleatoria, se deben evitar choques en la música de los biomas, por ello, se optará utilizar una banda sonora unificada, osea, una misma base musical que se reproduzca en todos los niveles, pero que progresivamente vaya evolucionando conforme el jugador también evoluciona, haciéndose más épica con la incorporación de más instrumentos.
+
+
 
 ### **Sounds Needed**
 
-1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
-2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
-    3. Happy chime (extra life)
-    4. Sad chime (died)
+**Effects**
 
-_(example)_
+Los efectos de sonido serán retros y estilizados, en lugar de ser realistas, para que así puedan encajar con la identidad visual del juego, ya que si se agregan efectos realistas, el diseño visual del juego no encajará con el realismo que el audio proporciona. Los efectos tendrán una estética similar a los sonidos clásicos de 16 bits, con un diseño de audio claro y fácil de identificar, de esta manera, la inmersión que se proporcionará será mucho mejor a una donde los efectos y sonidos no encajan con lo que uno ve.
+
+**Efectos de sonidos por interacción**
+
+*Movimientos*
+- Paso sobre tierra
+- Paso sobre piedra
+- Paso sobre pasto
+- Paso sobre nieve
+- Paso sobre arena
+- Desplazamiento rápido (dash)
+
+*Interacción*
+- Cofre abriéndose
+- Sonido de alguien bebiendo (pócima)
+- Armadura chocando contra el suelo
+
+*Armas*
+- Espada cortando
+- Hacha impactando
+- Lanza perforando
+- Daga apuñalando
+- Cargando tiro de arco
+- Flecha disparada desde un arco
+- Cargando tiro con ballesta
+- Ballesta disparando
+- Báculo canalizando energía
+- Disparo de energía
+
+*Combate*
+- Sonido de impacto al golpear un enemigo
+- Sonido de impacto al recibir daño
+- Sonido de muerte de enemigos
+- Sonido de muerte del jugador
+
+
+**Feedback**
+
+Para reforzar el feedback sin depender de elementos visuales únicamente, implementaremos sonidos como golpes secos para indicar que el jugador fue golpeado. Al morir, se reproducirá un sonido impactante y fuerte, seguido de un breve silencio para recalcar la derrota antes del reinicio del loop. Al derrotar al jefe final, habrá un sonido especial para resaltar el suceso.
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
+Como los niveles serán generados de manera aleatoria, conforme el jugador avanza y cambiarán entre biomas, también aleatorios, la música será unificada, con una sola pista general que va escalando conforme el juego avanza, hasta llegar a un punto máximo donde es una canción con una intensidad muy grande.
 
-_(example)_
+1. Estructura musical
+- Inicio (exploración temprana)
+- Sonidos de cuerdas y vientos suaves.
+- Bajo volumen y una sensación de inseguridad.
+
+2. Media partida (mayor dificultad)
+- Se añaden percusiones para aumentar la tensión.
+- La melodía base evoluciona con la inclusión de nuevos instrumentos.
+
+3. Final (Zona de mayor peligro y jefe final)
+- Uso de coros épicos y metales pesados.
+- Ritmo más acelerado para representar la urgencia y tensión del momento final del juego.
+
+*Sonidos Ambientales*
+Los sonidos ambientales serán mínimos, con una ligera presencia de sonidos como viento en ciertas áreas para reforzar la atmósfera. No se planea incluir efectos de sonidos adicionales en los escenarios, para evitar una saturación de efectos.
+
+Por el momento no sabemos de dónde obtendremos la música y los efectos pero se están tomando en cuenta las referencias y sitios que el Profesor Gilberto nos proporcionó:
+
+- http://www.freesound.org/
+- https://www.freesfx.co.uk/
+- http://dig.ccmixter.org/
+- https://www.playonloop.com/
+- https://www.bensound.com/
+- http://www.newgrounds.com/audio
+- https://felgo.com/game-resources/free-music-for-games
+- https://www.dl-sounds.com/
+- https://www.youtube.com/audiolibrary/music?nv=1
 
 
 ## _Schedule_
 
 ---
 
-_(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
+El desarrollo del juego estará organizado en 7 sprints de una semana cada uno, comenzando con el primer sprint la semana del 10 de Abril, y terminando en un deadline de 7 semanas. Cada sprint estará enfocado en áreas específicas dependiendo de los issues que se realicen en GitHub Projects, para así construir progresivamente todos los sistemas del juego, asegurando que las mecánicas, gráficos, sonidos, bases de datos, scripts y todos los aspectos del proyecto sean implementados de manera eficiente.
+
+Dado que el equipo está conformado por tres estudiantes y no tenemos experiencia previa en el desarrollo de videojuegos, es muy importante que el cronograma mantenga una estructura clara y organizada, asignando mayor prioridad a los elementos esenciales y dejando fases de pulido y ajuste para las últimas semanas. En el equipo buscamos siempre realizar pruebas y ajustes durante los sprints para así evitar una acumulación de errores al final del desarrollo.
+
+A continuación se detalla el cronograma del desarrollo, es importante aclarar y hacer mucho énfasis en que este cronograma NO es el oficial y que se puede ir cambiando durante el proceso de desarrollo del proyecto.
 
 1. develop base classes
     1. base entity
