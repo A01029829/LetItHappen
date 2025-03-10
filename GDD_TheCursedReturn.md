@@ -329,88 +329,203 @@ Para fomentar la rejugabilidad y la competencia entre jugadores, se añadirá un
 
 ---
 
-_(Note : These sections can safely be skipped if they&#39;re not relevant, or you&#39;d rather go about it another way. For most games, at least one of them should be useful. But I&#39;ll understand if you don&#39;t want to use them. It&#39;ll only hurt my feelings a little bit.)_
-
 ### **Themes**
 
-1. Forest
-    1. Mood
-        1. Dark, calm, foreboding
-    2. Objects
-        1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
-        2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
-    1. Mood
-        1. Dangerous, tense, active
-    2. Objects
-        1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
-        2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+1. Desierto
+    1. Atmósfera
+        1. Incómoda, calurosa, árida
+        2. Se ambienta en una aldea olvidada con ruinas antiguas y restos de civilizaciones.
+    2. Objetos
+        1. _Ambientales_
+            1. Cactus
+            2. Ruinas cubiertas por arena
+            3. Esqueletos y restos de armadura
+        2. _Interactivo_
+            1. Esqueletos (enemigo - 3 variaciones)
+            2. Cofres
+            3. Armas Secundarias
+            4. Curandero
+            5. Armero
 
-_(example)_
+Boceto de un nivel del desierto:
+
+GitHub Image md
+
+2. Bosque
+    1. Atmósfera
+        1. Misteriosa, Oscura, Tranquila
+    2. Objetos
+        1. _Ambiente_
+            1. Árboles grandes y matorrales densos
+            2. Raíces
+            3. Troncos caídos
+        2. _Interactivo_
+            1. Duendes (enemigo - 2 variaciones)
+            2. Lobos (enemigo - 1 variación)
+            3. Cofres
+            4. Armas Secundarias
+            5. Curandero
+            6. Armero
+
+Boceto de un nivel del bosque:
+
+GitHub Image md
+
+2. Nieve
+    1. Atmósfera
+        1. Fría, Hostil, Invernal
+    2. Objetos
+        1. _Ambiente_
+            1. Paisaje cubierto de nieve
+            2. Nieve cubriendo el suelo, sin afectar la movilidad del jugador.
+            3. Rocas congeladas
+            4. Piedras de hielo
+        2. _Interactivo_
+            1. Minotauros (enemigo - 1 variación)
+            2. Lagartos (enemigo - 2 variaciones)
+            3. Cofres
+            4. Armas Secundarias
+            5. Curandero
+            6. Armero
+
+
+Boceto de un nivel de la nieve:
+
+GitHub Image md
 
 ### **Game Flow**
 
-1. Player starts in forest
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
-7. … etc.
+*Inicio del juego*
+1. Aparece un breve texto que da contexto a la historia del juego.
+2. El jugador comienza en un bioma aleatorio (bosque, desierto o nieve).
+3. HUD aparece: barra de vida, barra de maldición, indicador de clase seleccionada, etc.
 
-_(example)_
+*Exploración inicial*
+1. El jugador se encuentra en la primera sala con enemigos aleatorios.
+2. El jugador se da cuenta que la puerta a la siguiente sala está cerrada.
+3. El jugador observa el tipo de enemigos (corta o larga distancia) y toma decisiones sobre cómo proceder.
+4. El jugador observa que la barra de maldición está comenzando a bajar.
+5. La batalla comienza, el jugador comienza a atacar estratégicamente.
+
+*Movimiento entre Salas*
+1. Una vez derrotados los enemigos, la puerta o entrada a la siguiente sala se desbloquea.
+2. El jugador se mueve hacia la siguiente sala aleatoria (bioma aleatorio), encontrando cofres y enemigos en cada una.
+3. Las mecánicas como esquivar y ataques básicos se emplean constantemente durante el avance.
+
+*Encuentro con el Jefe*
+1. El jugador lleva a la cuarta sala, donde se encontrará a un Jefe.
+2. La barra de maldición está a la mitad o menos, lo que genera presión adicional para completar el nivel.
+3. Se activa un corte de sonido o transición para indicar la llegada al jefe.
+
+*Fase del Combate Final*
+1. El jugador se enfrenta al jefe final en una batalla emocionante.
+2. El jefe tiene mecánicas especiales, como fuerza mucho mayor o spawnear enemigos básicos,  el jugador debe adaptarse a su patrón de ataque para sobrevivir.
+3. El combate sucede bajo la presión de la maldición, con el jugador viendo cómo la barra disminuye constantemente.
+
+*Finalización del nivel*
+1. Si el jugador derrota al jefe, se aumenta el tamaño y capacidad máxima de la barra de maldición, además, se desbloquea la puerta para avanzar al siguiente nivel.
+2. Si el jugador pierde debido a la barra de maldición vacía o morir, se muestra una pantalla de derrota y el jugador es regresado al inicio del nivel.
+
+*Reiniciar o Continuar*
+1. Al reiniciar, el jugador comienza de nuevo, pero con una nueva generación de niveles.
+2. Además, el jugador conserva el tamaño alcanzado de la barra (en dado caso de que haya eliminado a un jefe en cierto nivel).
+
+A continuación, mostraremos unas tablas que simulan los valores de enemigos y tiempo en cada nivel (estos valores están sujetos a cambios de ser necesario y se usaron para visualizar el tiempo de sobra que le quedaría al usuario si se dedicara únicamente a eliminar enemigos):
+
+**Nivel 1** 
+
+Parte a): 
+
+Es necesario recordar que se parte de un tiempo total inicial de 600 segundos:
+- En esta tabla se estima un tiempo que toma en eliminar a los enemigos por su fuerza para el primer nivel.
+- Posteriormente, se pone el número de enemigos máximo del nivel (este es el mismo en todos los niveles).
+- Después se obtiene el tiempo total que toma eliminarlos.
+
+Parte b)
+
+- Tiempo base por eliminación: Posteriormente, se calcula el tiempo base que se va a recuperar por eliminación de cada enemigo (un 30% del tiempo que toma eliminarlo)
+- Tiempo extra porcentaje: En esta parte se calcula un umbral (aleatorio) de recuperación extra de energía, que va desde el 0.1%-0.3% del valor inicial de la barra al iniciar el nivel (en este caso, de 600 segundos).
+- Es importante mencionar que se estimó con el mejor caso (0.3%) y el peor caso (0.1%) para ver ambos escenarios.
+
+Parte c) y d)
+- Tiempo agotado: Aquí se calcula el tiempo que se perdió en el mejor y el peor caso (restando el tiempo recuperado)
+- Tiempo restante total: Aquí se calcula el tiempo restante (tiempo inicial-tiempo perdido) al terminar el nivel, con los dos escenarios.
+- Tiempo restante promedio: Se calcula un promedio de ambos escenarios, para utilizarlo como referencia en el calculo del siguiente nivel.
+
+GitHub Image md
+
+**Nivel 2** 
+
+En esta sección se hace el mismo proceso partiendo de 533.7 segundos, lo único que cambia es:
+- El tiempo de eliminación de los enemigos aumenta, debido a que se vuelven más fuertes.
+- El tiempo base de recuperación pasa de 30% a 20%
+- El tiempo restante final (promedio) de recuperación es de 361 segundos.
+
+GitHub Image md
+
+**Nivel 3**
+
+Los cambios son:
+- El tiempo de eliminación de los enemigos.
+- El tiempo base de recuperación pasa de 20% a 10%.
+- El tiempo restante estimado al terminar el juego sería de 80 segundos.
+
+GitHub Image md
 
 ## _Development_
 
 ---
 
+El desarrollo del juego se estructurará en una serie de clases base y clases derivadas que encapsulan las mecánicas principales del juego.
+
 ### **Abstract Classes / Components**
 
-1. BasePhysics
-    1. BasePlayer
-    2. BaseEnemy
-    3. BaseObject
-2. BaseObstacle
-3. BaseInteractable
+Estas clases proporcionan la estructura más fundamental y básica del juego, se definirán las propiedades y métodos que van a ser heredados por clases más específicas.
 
-_(example)_
+1. PersonajeBase
+- JugadorBase (Tiene movimiento, ataques y ataque cargado)
+- EnemigoBase (Ataca al jugador con distinto daño dependiendo del tipo)
+- NPCBase (Ofrecen objetos al jugador)
+2. ObjetoBase
+- ObjetoArmaSecundaria (Son temporales y ofrecen ventajas)
+3. ObstaculoBase
+4. ElementosUIBase
 
 ### **Derived Classes / Component Compositions**
 
-1. BasePlayer
-    1. PlayerMain
-    2. PlayerUnlockable
-2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
-3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
-4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
-5. BaseInteractable
-    1. InteractableButton
+1. JugadorBase
+- Soldado (Cuerpo a cuerpo y daño alto)
+- Arquero (Rango de ataque alto y daño bajo)
+- Hechizero (Rango de ataque moderado y daño moderado)
+2. EnemigoBase
+- EnemigoEsqueleto (Comunes y fuertes)
+- EnemigoDuende (Comunes y fuertes)
+- EnemigoLagarto (Comunes y fuertes)
+- EnemigoMinotauro (Fuertes)
+- EnemigoLobo (Fuertes)
+3. NPCBase
+- NPCCurandera (Ofrece una poción al jugador)
+- NPCCArmero (Ofrece un arma secundaria al jugador)
+4. ObjetoBase
+- ObjectoCofre (Ofrece un arma secundaria o una poción al jugador)
+- Objeto pócima (Regenera vida al jugador)
+5. ObjetoArmaSecundaria
+- ArmaHacha (Daño, alcance, velocidad)
+- ArmaLanza(Daño, alcance, velocidad)
+- ArmaBallesta (Daño, alcance, velocidad)
+- ArmaDaga (Daño, alcance, velocidad)
+6. ObstaculoBase
+- ObstaculoPared (Previene que el jugador salga del nivel)
+- ObstaculoPuerta (Previene que el jugador salga de la sala hasta que mate a todos los enemigos)
+7. UIBase
+- BarraMaldicion (Muestra el tiempo restante antes de que la maldición consuma al jugador)
+- BarraVida (Muestra la vida del jugador)
+- Iconos (Muestran la clase del jugador y si es el caso el arma secundaria)
+- Puntaje (Muestra los enemigos eliminados)
+- BotonMenu (Pausa el juego y abre los ajustes)
 
-_(example)_
+
+
 
 ## _Graphics_
 
@@ -418,23 +533,146 @@ _(example)_
 
 ### **Style Attributes**
 
-What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
+El juego utiliza una paleta de colores variada pero que al final del día permite diferenciar biomas y personajes sin dejar de tener sentido en cuanto a lo visual. A pesar de que no seguiremos una paleta de colores limitada, los tonos terrosos, fríos, o cálidos se emplean según el entorno para mantener una ambientación correcta y cómoda. 
 
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
+Los colores presentan sombreados y contrastes que aportan profundidad pero mantienen un estilo pixel art característico. No aplicaremos un post-procesado HSV, pero los escenarios estarán diseñados para ser reconocibles sin necesidad de aplicar filtros o correcciones adicionales.
 
-Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they&#39;re interacting with something? That they \*can\* interact with something?
+Algunos colores que utilizaremos son los siguientes:
+- Para el soldado: #726b7e y #867e7f
+- Para el arquero: #64a42c y #0b5c2f
+- Para el hechicero: #3c49ad y #322d6a
+- Para el bioma del bosque: #a0b12a y #4d8051
+- Para el bioma del desierto: #d7bd4e y #ba8b4a
+- Para el bioma de nieve: #a6b5b5 y #8cadb4
+
+El estilo gráfico es en pixel art en 2D, con una resolución aproximada de 32x32 píxeles por personaje. Queremos que las armas y vestimentas tengan un toque semi-realista. Para los personajes vamos a utilizar contornos negros además de contrastes de color para definir las siluetas y sombras. 
+
+Para tener una retroalimentación visual efectiva, incorporaremos diferentes efectos, por ejemplo, cuando el jugador o un enemigo recibe daño, se mostrará un frame rojo en el sprite. Al igual que con el jugador, los enemigos también mostrarán un frame rojo en su sprite. 
+
+Los cofres y armas secundarias contarán con sus propios efectos y animaciones, también se implementarán animaciones en la barra de vida y maldición, al igual que colocar íconos por si el jugador obtiene el arma secundaria.
 
 ### **Graphics Needed**
 
-1. Characters
-    1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
-    2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
-2. Blocks
+**Personajes**
+
+**1. Humanos (jugador)**
+1. *Arquero*: No tendrá variación, y solo cambiará de arma en caso de encontrar un arma secundaria temporal.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar con arma principal (cuatro direcciones)
+   - Atacar con arma secundaria (cuatro direcciones)
+   - Dash (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+   
+3. *Soldado*: No tendrá variación, y solo cambiará de arma en caso de encontrar un arma secundaria temporal.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar con arma principal (cuatro direcciones)
+   - Atacar con arma secundaria (cuatro direcciones)
+   - Dash (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+
+4. *Mago*: No tendrá variación, y solo cambiará de arma en caso de encontrar un arma secundaria temporal.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar con arma principal (cuatro direcciones)
+   - Atacar con arma secundaria (cuatro direcciones)
+   - Dash (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+
+5. *Curandera y Armero*: No tendrá variación, y su diseño será diferente a todos los demás personajes, a su vez, este diseño será exclusivo para cada personaje.
+   - Idle (cuatro direcciones)
+   - Interacción con el jugador (una dirección)
+
+**2. Enemigos Semi-Humanos**
+
+1. *Esqueletos*: Habrá tres variaciones en el diseño, que serán cambios en su armadura, los que tienen más armadura harán más daño y tendrán más vida, los que tienen menos armadura son los “comunes” con menos fuerza y menos vida.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+
+2. *Duendes*: Habrá tres variaciones en el diseño, que serán cambios en su armadura, los que tienen más armadura harán más daño y tendrán más vida, los que tienen menos armadura son los “comunes” con menos fuerza y menos vida.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+  
+3. *Minotauro*: No tendrá variación, el daño que tiene es fijo.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+
+**3. Enemigos No-Humanos**
+
+1. *Lagartos*: Habrá tres variaciones en el diseño, que serán cambios en su armadura, los que tienen más armadura harán más daño y tendrán más vida, los que tienen menos armadura son los “comunes” con menos fuerza y menos vida.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+  
+2. *Lobo*: No tendrá variación, el daño que tiene es fijo.
+   - Idle (cuatro direcciones)
+   - Caminar (cuatro direcciones)
+   - Atacar (cuatro direcciones)
+   - Recibir daño (cuatro direcciones)
+   - Morir (una dirección)
+
+**Tiles y Bloques**
+
+Cada bioma tendrá su propio tileset, organizados en 12 salas distribuidas en 3 niveles. Los tilesets estarán prehechos y se generarán aleatoriamente. Cabe aclarar que todos los tilesets tendrán bordes en los extremos del nivel, para funcionar como muro de colisión para el jugador
+
+1. *Bosque*
+   - Pasto
+   - Camino de tierra
+   - Rocas
+   - Flores
+   - Árboles
+   - Lagunas (zonas con agua)
+
+2. **Desierto*
+   - Arena
+   - Ruinas de piedra
+   - Restos de estructuras
+   - Cactus
+   - Armaduras tiradas
+   - Esqueletos (decoración)
+
+3. *Nieve*
+   - Suelo Nevado
+   - Bloques de hielo
+   - Rocas cubiertas de nieve
+   - Árboles nevados
+   - Huellas
+   - Lagos Congelados
+
+Además de estos elementos en los tilesets, planeamos agregar decoraciones que no tengan ningún otro propósito más que ser utilizados como decoración para ayudar a ambientalizar la zona. No tendrán interacción alguna con el personaje.
+
+**Ambiente**
+- Hierba Alta
+- Huesos en el suelo
+- Picos de hielo
+- Columnas rotas (ruinas)
+- Estatuas dañadas (ruinas)
+- Raíces que salen de los árboles
+- Árboles
+- Arbustos
+
+**Other**
+- Cofres
+- Camino que indica la salida al siguiente nivel
+- Zonas donde estarán los NPC´s (Curandero y Armero)
+
+
+1. Blocks
     1. Dirt
     2. Dirt/Grass
     3. Stone Block
@@ -442,14 +680,14 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
     5. Tiled Floor
     6. Weathered Stone Block
     7. Weathered Stone Bricks
-3. Ambient
+2. Ambient
     1. Tall Grass
     2. Rodent (idle, scurrying)
     3. Torch
     4. Armored Suit
     5. Chains (matching Weathered Stone Bricks)
     6. Blood stains (matching Weathered Stone Bricks)
-4. Other
+3. Other
     1. Chest
     2. Door (matching Stone Bricks)
     3. Gate
