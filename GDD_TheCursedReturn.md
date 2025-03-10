@@ -53,10 +53,12 @@ Queda estrictamente prohibida la reproducción, distribución, modificación o u
 ## _Game Design_
 
 ---
+### **Logo**
+GitHub Image md
 
 ### **Summary**
 
-Desarrollado por Infinite Horizon Studios, "The Cursed Return" es un roguelite de acción, aventura y supervivencia, que contiene elementos de RPG´s, en el que eres un soldado atrapado en un loop temporal creado por una hechicera que busca venganza. La guerra entre los reinos del Norte y del Sur ha terminado, pero a un costo terrible. Tras años de lucha, estás listo para regresar a casa, pero algo no está bien: el mundo a tu alrededor comienza a cambiar de maneras extrañas.
+Desarrollado por Infinite Horizon Studios, "The Cursed Return" es un roguelite top-down de acción, aventura y supervivencia, que contiene elementos de RPG´s, en el que eres un soldado atrapado en un loop temporal creado por una hechicera que busca venganza. La guerra entre los reinos del Norte y del Sur ha terminado, pero a un costo terrible. Tras años de lucha, estás listo para regresar a casa, pero algo no está bien: el mundo a tu alrededor comienza a cambiar de maneras extrañas.
 
 Explora niveles aleatorios, lucha contra enemigos desafiantes y toma decisiones que definirán el destino de tu personaje. Al principio de la partida elige entre guerrero, arquero y hechicero, cada uno con armas únicas y especiales, pero recuerda que cada elección tiene un costo, ya sea bueno o malo. La maldición no solo te persigue, sino que también altera la realidad, creando peligros impredecibles y enemigos cada vez más poderosos.
 
@@ -79,23 +81,27 @@ Finalmente, queremos provocar una sensación de precaución, con la que el jugad
 
 ### **Screens**
 
-1. **Pantalla Inicial**  
-   i. Empezar nueva partida  
+El juego contará con varias pantallas clave, cada una diseñada con una interfaz clara y funcional para mejorar la experiencia del usuario. Cada pantalla tendrá su propio propósito y navegación bien definida. A continuación se explican las pantallas más importantes, además, se mostrará un concepto muy básico de lo que se espera diseñar.
+
+1. **Title Screen (Pantalla de Inicio)**
+Propósito: Servir como la primera impresión del juego y ofrecer acceso a las opciones principales de navegación y configuración.
+Incluirá:
+   i. **Logo del juego**: Posicionado en el centro superior de la pantalla, acompañado de una animación que lo hará destacar visualmente. 
    ii. Cargar partida  
    iii. Opciones  
 
-2. **Selección de clase**  
+3. **Selección de clase**  
    i. Guerrero  
    ii. Arquero  
    iii. Mago  
    iv. Confirmar Selección  
 
-3. **Juego**  
+4. **Juego**  
    i. HUD  
    ii. Menú de pausa  
    iii. Inventario  
 
-4. **Pantalla de muerte/reinicio**  
+5. **Pantalla de muerte/reinicio**  
    i. Mensaje de derrota con estadísticas de la partida  
    ii. Opción para reiniciar partida  
    iii. Volver al menú principal  
